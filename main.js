@@ -108,7 +108,7 @@
 
 // let randomWord = 'New Palace New King'
 // let replaceWord = randomWord.replace('New','old')
-// let replaceAllWord = randomWord.replace('New','old')
+// let replaceAllWord = randomWord.replaceAll('New','old')
 
 // console.log(randomWord+" "+replaceWord+" "+" "+replaceAllWord);
 
@@ -207,7 +207,7 @@ const PopArray = arrayPop.pop();
 console.log("ArrayPopped", PopArray);
 console.log(arrayPop)
 
-// Unshift 
+// Unshift  
 
 let unshiftArr = [1,2,3,6,7];
 let unshiftResult = unshiftArr.unshift(0);
@@ -231,7 +231,57 @@ let nums1 = [1,2,3,4,5,6,7]
 let nums2 = nums1.reverse()
 console.log(nums2)
 
-let name1 = "hello";
-let na =name1.split("")
-let ma = na.reverse()
-console.log(ma.toString().replaceAll("," ,""))
+let word1 = "hello";
+let wordSplit =word1.split("")
+let revArray = wordSplit.reverse()
+console.log(revArray.toString().replaceAll("," ,"")) 
+
+// recap
+
+const varia = "man";
+console.log(varia + " woman");
+console.log(`${varia} woman `);
+ 
+// '' -
+
+// js Dates
+const date = Date.now();
+console.log(date)
+const currentDate = new Date();
+console.log(currentDate)
+
+const getYear = new Date().getFullYear();
+console.log(getYear)
+
+const getMonth = new Date().getMonth();
+console.log(getMonth)
+
+const getSec= new Date().getSeconds();
+console.log(getSec)
+
+const setDate = new Date(2023, 10, 5);
+console.log("Set date ", setDate);
+
+const dateToString = new Date().toString();
+console.log(dateToString)
+console.log(dateToString.slice(0,15))
+
+const setDateFormat = new Intl.DateTimeFormat("en-Us", {
+    year:"2-digit",
+    month: "2-digit",
+    day : "numeric",
+}).format(date)
+
+console.log(setDateFormat); 
+
+const startTime = Date.now()
+
+setTimeout(() =>{
+    const endTime = Date.now()
+
+    const timeDiff = endTime - startTime
+
+    console.log(`Start Time: ${new Date(startTime)}`)
+    console.log(`End Time: ${new Date(endTime)}`)
+    console.log(`Time Difference ${timeDiff}`)
+}, 1000)

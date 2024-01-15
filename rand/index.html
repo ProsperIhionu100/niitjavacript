@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        #img{
+            width: 200px;
+            height: 100px;
+        }
+    </style>
+
+<body>
+    
+    <div>
+        <img  id="img" src="prod12.jpg" alt="" srcset="">
+    </div>
+
+    <h1 id="text">This is a boy</h1>
+
+    <script>
+        const img = document.getElementById("img")
+        let i = 0;
+        let images = ["prod12.jpg", "prod22.jpg", "prod21.jpg"];
+
+        function changeImage() {
+            img.src = images[i];
+            i++
+
+            if(i > images.length - 1){
+                i = 0;
+            }
+
+            setTimeout(changeImage, 500)
+        }
+
+        changeImage()
+        
+        const text = document.getElementById("text")
+        let j = 0;
+        let texts = ["Django", "React", "Laravel", "PHP"];
+
+        function changeText() {
+            text.innerHTML = texts[j];
+            j++
+
+            if(j > texts.length - 1){
+                j = 0;
+            }
+
+            setTimeout(changeText, 500)
+        }
+
+        changeText()
+    </script>
+ 
+</body>
+</html>
